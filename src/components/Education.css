@@ -1,0 +1,48 @@
+.education-section {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px 20px;
+    margin: 20px 0;
+}
+
+.education-section h2 {
+    font-size: 2rem;
+    color: #343a40;
+    margin-bottom: 15px;
+}
+
+.education-section .education-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 10px;
+}
+
+.education-section .education-item:last-child {
+    border-bottom: none;
+}
+
+#education {
+    padding: 50px 0;
+}
+
+.education-header {
+    display: flex;
+    align-items: center; 
+    gap: 20px;
+}
+
+.animated-image {
+    width: 900px; 
+    height: 90px;
+}
+@media (max-width: 768px) {
+    section {
+      padding: 40px 15px;
+    }
+  
+    .container {
+      max-width: 100%; 
+    }
+  }
+  

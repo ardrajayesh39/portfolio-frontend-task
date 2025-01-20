@@ -1,0 +1,36 @@
+.about-content {
+    text-align: left;
+  }
+  
+  .about-header {
+    display: flex;
+    align-items: center; 
+    gap: 20px; 
+  }
+  
+  .animated-image {
+    width: 150px; 
+    height: 150px; 
+  }
+  
+  .about-section h2 {
+    font-size: 2rem;
+    color: #343a40;
+    margin-bottom: 15px;
+  }
+  
+  .about-section p {
+    font-size: 1.1rem;
+    color: #495057;
+    line-height: 1.6;
+  }
+  @media (max-width: 768px) {
+    section {
+      padding: 40px 15px;
+    }
+  
+    .container {
+      max-width: 100%; 
+    }
+  }
+  
