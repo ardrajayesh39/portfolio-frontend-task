@@ -4,47 +4,42 @@ import './Projects.css'; // Import your styles
 import Lottie from 'lottie-react';
 import animationData from '../assets/animations/project-animation.json';
 
-// Import images
-import project1Image from '../assets/images/project1.jpg';
-import project2Image from '../assets/images/project2.jpg';
+// Import placeholder image for missing project images
+import placeholderImage from '../assets/images/project1.jpg';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]); // State to store projects
   const [selectedProject, setSelectedProject] = useState(null); // State for selected project
-  const [loading, setLoading] = useState(true); // State for loading indicator
   const [error, setError] = useState(null); // State for error handling
 
-  // Images for projects (mapping project IDs or indices to images)
-  const projectImages = [project1Image, project2Image];
   // Fetch data from the backend
   useEffect(() => {
     axios
-      .get('http://localhost:8080/api/projects') 
+      .get('http://localhost:8080/api/projects') // Replace with your API endpoint
       .then((response) => {
         setProjects(response.data); // Update state with fetched data
-        setLoading(false); // Set loading to false
       })
       .catch((err) => {
-        setError('Failed to fetch projects. Please try again.'); // Handle error
-        setLoading(false); // Set loading to false
+        setError('Failed to fetch projects. Please try again later.'); // Handle error
       });
   }, []); // Empty dependency array ensures this runs only once when the component mounts
 
-  // Show loading indicator
-  if (loading) return <p>Loading...</p>;
-
-  // Show error message if any
-  if (error) return <p>{error}</p>;
+  // Function to handle image errors and set fallback image
+  const handleImageError = (e) => {
+    e.target.src = placeholderImage; // Set fallback image
+  };
 
   return (
     <section id="projects" className="container py-5">
-      <div className="projects-header">
-        
-        <div className="animated-icon">
-          <Lottie animationData={animationData} loop={true} />
+      <div className="projects-header text-center">
+        <div className="d-flex align-items-center justify-content-center">
+          <div className="animated-icon me-3">
+            <Lottie animationData={animationData} loop={true} />
+          </div>
+          <h2 className="projects-title">PROJECTS</h2>
         </div>
-        <h2 className="projects-title">PROJECTS</h2>
       </div>
+      {error && <p className="error-message">{error}</p>}
       {selectedProject ? (
         // Detailed View of Selected Project
         <div className="project-details">
@@ -52,11 +47,11 @@ const Projects = () => {
           <p>{selectedProject.description}</p>
           {/* Display the image for the selected project */}
           <img
-            src={projectImages[selectedProject.id - 1]} // Assuming `id` starts from 1
+            src={`data:image/jpeg;base64,${selectedProject.image}`} // Handle dynamic image from backend
             alt={selectedProject.title}
             className="project-img mb-3"
+            onError={handleImageError} // Fallback to placeholder image
           />
-          
           <div className="text-center">
             <button
               className="btn btn-secondary mt-3"
@@ -69,16 +64,21 @@ const Projects = () => {
       ) : (
         // Grid View of Titles with Images
         <div className="projects-grid">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <div
-              key={index}
+              key={project.id}
               className="project-title-card"
               onClick={() => setSelectedProject(project)} // Set the selected project on click
+              role="button"
+              tabIndex="0"
+              onKeyPress={(e) => e.key === 'Enter' && setSelectedProject(project)} // Handle keyboard navigation
+              aria-label={`View project: ${project.title}`} // Accessibility enhancement
             >
               <img
-                src={projectImages[index]} // Match image with project index
+                src={`data:image/jpeg;base64,${project.image}`} // Handle dynamic image from backend
                 alt={project.title}
                 className="project-thumbnail"
+                onError={handleImageError} // Fallback to placeholder image
               />
               <h4>{project.title}</h4>
             </div>

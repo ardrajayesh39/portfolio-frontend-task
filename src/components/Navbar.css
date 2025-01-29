@@ -1,87 +1,75 @@
+/* Navbar Container */
 .navbar {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    flex-wrap: wrap;
-  }
+  background-color: #e6e6fa !important; /* Light lavender background */
+  box-shadow: none !important; /* Remove box-shadow */
+  display: flex;
+  justify-content: flex-start; /* Keep items aligned to the left initially */
+  align-items: center; /* Vertically align items */
+  padding: 0 20px; /* Adjust horizontal padding */
   
-  .navbar-brand {
-    font-weight: bold;
-    color: #343a40 !important;
-  }
-  
-  .navbar-nav .nav-link {
-    color: #3e4449 !important;
-    transition: color 0.3s ease;
-  }
-  
-  .navbar-nav .nav-link:hover {
-    color: #007bff !important;
-  }
-  .nav-link.active {
-    font-weight:bolder;
-    color: #007bff !important; 
-    border-bottom: 2px solid #252c33; 
-    color: #2f3336;
-  }
-  
-  .navbar-nav {
-    display: flex;
-    flex-direction: row; 
-  }
-  
- 
-  @media (max-width: 768px) {
-    .navbar-nav {
-      flex-direction: column; 
-      align-items: center;
-    }
-  }
+}
 
-  @media (max-width: 768px) {
-    section {
-      padding: 40px 15px;
-    }
-  
-    .container {
-      max-width: 100%; 
-    }
-  }
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #000000 !important; /* Black text for brand */
+  text-transform: uppercase;
+  margin-right: 300px;
+  padding: 3%;
+}
 
-  
+.brand-left{
+  text-align: left !important;
+}
+/* Navbar Links Container */
+.navbar-nav {
+  display: flex;
+  gap: 30px; /* Adjust this value to increase the gap between links */
+  align-items: center; /* Ensure vertical alignment of icons and text */
+  margin-left: auto; /* Push the entire navbar links to the right */
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+  color: #000000 !important; /* Black color for inactive links */
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease; /* Smooth transition on hover */
+  display: flex; /* Use flexbox to align icon and text */
+  align-items: center; /* Center align icon and text vertically */
+  gap: 10px; /* Add space between icon and text */
+}
+
+/* Optional: Navbar Icon Style */
+.navbar-nav .nav-link .icon {
+  font-size: 1.2rem; /* Adjust size of the icon */
+}
+
+/* Mobile View Styling */
 @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column; 
-      align-items: flex-start;
-    }
-  
-    .navbar-nav {
-      display: none; 
-      flex-direction: column;
-      width: 100%;
-      padding: 10px 0;
-      background-color: #f8f9fa;
-      margin-top: 10px;
-    }
-  
-    .navbar-nav.show {
-      display: flex; 
-    }
-  
-    .nav-item {
-      margin: 10px 0;
-      width: 100%;
-      text-align: left;
-    }
-  
-    .navbar-toggler {
-      background: none;
-      border: none;
-      font-size: 2rem;
-      cursor: pointer;
-      display: block;
-    }
-  
-    .navbar-toggler-icon {
-      font-size: 2rem;
-    }
+  .navbar-nav {
+    flex-direction: column; /* Stack links vertically on small screens */
+    align-items: flex-start;
+    background-color: #e6e6fa; /* Light lavender background for dropdown */
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
   }
-  
+
+  .navbar-nav .nav-link {
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    margin: 5px 0;
+  }
+
+  .navbar-toggler {
+    font-size: 1.5rem;
+    color: #000000; /* Black color for the toggle icon */
+    border: none;
+  }
+
+  .navbar-toggler-icon {
+    color: #000000; /* Black for toggle icon */
+  }
+}

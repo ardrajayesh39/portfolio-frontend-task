@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faTasks, faGraduationCap, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faBrain } from '@fortawesome/free-solid-svg-icons/faBrain';
-import { Navbar, Nav, Container } from 'react-bootstrap'; // Keep only Navbar, Nav, and Container
+import { Navbar, Nav, Container } from 'react-bootstrap';
 
 function NavbarComponent() {
+  useEffect(() => {
+    // Ensure box-shadow is removed on mount
+    document.querySelector('.navbar').style.boxShadow = 'none';
+  }, []);
+
   return (
     <Navbar expand="lg" bg="light" variant="light" className="shadow">
       <Container>
         {/* Brand Logo */}
-        <Navbar.Brand href="/">My Portfolio</Navbar.Brand>
+        <Navbar.Brand href="/" className="brand-left">ARDRA JAYESH</Navbar.Brand>
 
         {/* Navbar Toggle Button (for mobile) */}
         <Navbar.Toggle aria-controls="navbar-nav" />

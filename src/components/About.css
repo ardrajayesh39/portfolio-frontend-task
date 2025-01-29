@@ -1,36 +1,106 @@
+/* About Page Container */
+#about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0 15px;
+  overflow: hidden;
+}
+
+/* About Content */
 .about-content {
-    text-align: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Profile Image */
+.profile-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-img {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 10px solid white;
+}
+
+/* Left Section (Text) */
+.text-container {
+  flex: 1;
+  text-align: center;
+}
+
+/* Moving effect ONLY for "hello" */
+@keyframes moveHello {
+  0% {
+    transform: translateX(-10px);
   }
-  
-  .about-header {
-    display: flex;
-    align-items: center; 
-    gap: 20px; 
+  50% {
+    transform: translateX(10px);
   }
-  
-  .animated-image {
-    width: 150px; 
-    height: 150px; 
+  100% {
+    transform: translateX(-10px);
   }
-  
-  .about-section h2 {
-    font-size: 2rem;
-    color: #343a40;
+}
+
+.hello-text {
+  font-size: 25px;
+  color: black;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: inline-block;
+  animation: moveHello 2s ease-in-out infinite;
+}
+
+/* Static intro */
+.intro {
+  font-size: 15px;
+  color: black;
+  margin-top: 10px;
+  font-style: normal;
+}
+
+/* Name text remains static */
+.name-text {
+  font-size: 50px;
+  font-weight: bold;
+  color: black;
+  margin: 10px 0;
+}
+
+.name-text .highlight {
+  color: #d61c5b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .text-container {
+    order: 2;
+  }
+
+  .profile-container {
+    order: 1;
     margin-bottom: 15px;
   }
-  
-  .about-section p {
-    font-size: 1.1rem;
-    color: #495057;
-    line-height: 1.6;
+
+  .name-text {
+    font-size: 40px;
   }
-  @media (max-width: 768px) {
-    section {
-      padding: 40px 15px;
-    }
-  
-    .container {
-      max-width: 100%; 
-    }
-  }
-  
+}

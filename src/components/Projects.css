@@ -1,122 +1,169 @@
-/* Grid container for project titles */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
-    gap: 20px; /* Space between grid items */
-    margin-top: 20px;
-    
-  }
-  
-  /* Individual project title cards */
-  .project-title-card {
-    padding: 15px;
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #fff;
-    background-color: #a1aab3; /* Primary color for the cards */
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform 0.3s, background-color 0.3s;
-  }
-  
-  /* Hover effect for cards */
-  .project-title-card:hover {
-    background-color: #2c84e2; /* Darker shade on hover */
-    transform: translateY(-5px); /* Slight lift on hover */
-  }
-  
-  /* Detailed project view */
-  .project-details {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-  }
-  
-  .btn-secondary {
-    margin-top: 10px;
-    color: white;
-    background-color: #6c757d;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-    border-radius: 4px;
-  }
-  
-  .btn-secondary:hover {
-    background-color: #858e96;
-  }
-  
-  .projects-header {
-    display: flex;
-    align-items: center; /* Align animation and title vertically */
-    justify-content: flex-start; /* Align animation and title to the left */
-    gap: 10px; /* Add spacing between animation and title */
-    margin-bottom: 20px; /* Add space below the header */
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f7f7f7; /* Light background for the page */
 }
 
-  
-  .projects-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #343a40; /* Dark gray for the title */
-    margin: 0;
-    align-items: center;
-    padding-right: 70%;
+/* Container for the projects */
+.container {
+  max-width: 1200px; /* Limit container width */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Grid container for project titles */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 40px; /* Space between grid items */
+  padding: 40px 0;
+}
+
+/* Individual project title cards */
+.project-title-card {
+  background-color: #ffefff; /* White background for the card */
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333; /* Dark text for better readability */
+  border-radius: 12px; /* Rounded corners for the cards */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for the card */
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Prevents overflow on hover */
+  height: 100%; /* Ensures card is the same height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Hover effect for project cards */
+.project-title-card:hover {
+  transform: translateY(-8px); /* Slight lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Project image styling */
+.project-thumbnail {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Ensures image fits nicely within the card */
+  border-radius: 10px; /* Rounded corners for image */
+  margin-bottom: 15px; /* Space below image */
+}
+
+/* Header Section */
+.projects-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.projects-title {
+  font-size: 40px;
+  font-weight: bold;
+  color: #000000; /* Dark color for the title */
+  margin-bottom: 20px;
+}
+
+.animated-icon {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.project-details {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center !important;
+}
+.project-details p {
+  text-align: justify !important;
+}
+
+
+.project-details img {
+  width: 100%;
+  max-width: 100%; /* Makes the image responsive */
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+/* Button Styling */
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+/* Project details section styling */
+.project-title-card h4 {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Accessibility for hover and focus on cards */
+.project-title-card:focus, .project-title-card:hover {
+  outline: none; /* Prevent focus outline */
+  transform: scale(1.05); /* Slightly increase size for focus/hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   }
-  
-  .animated-icon {
-    width: 30px; /* Adjust the width of the animation */
-    height: 30px; /* Adjust the height of the animation */
-    align-items: flex-start;
-  }
-  @media (max-width: 768px) {
-    section {
-      padding: 40px 15px;
-    }
-  
-    .container {
-      max-width: 100%; /* Full width on smaller screens */
-    }
-  }
-  .project-thumbnail {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 10px;
-  }
-  
-  .project-img {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 8px;
-  }
-  
+
   .project-title-card {
-    cursor: pointer;
-    text-align: left;
-    display: flex;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    transition: transform 0.2s ease;
-    align-items: center;
+    padding: 15px;
   }
-  
-  .project-title-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+  .project-thumbnail {
+    height: 180px;
   }
-  
-  .project-details img {
+}
+
+@media (max-width: 768px) {
+  .projects-header {
     margin-top: 20px;
   }
-  .project-icon {
-    width: 20px; /* Adjust icon size */
-    height: 20px;
-    margin-right: 10px; /* Add space between the icon and the title */
-    display: inline-block;
+
+  .projects-title {
+    font-size: 2rem;
   }
+
+  .project-thumbnail {
+    height: 150px;
+  }
+
+  .project-title-card {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-title {
+    font-size: 1.5rem;
+  }
+
+  .project-thumbnail {
+    height: 120px;
+  }
+}
