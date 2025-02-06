@@ -5,7 +5,7 @@ import Lottie from 'lottie-react';
 import animationData from '../assets/animations/project-animation.json';
 
 // Import placeholder image for missing project images
-import placeholderImage from '../assets/images/project1.jpg';
+//import placeholderImage from '../assets/images/project1.jpg';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]); // State to store projects
@@ -25,9 +25,9 @@ const Projects = () => {
   }, []); // Empty dependency array ensures this runs only once when the component mounts
 
   // Function to handle image errors and set fallback image
-  const handleImageError = (e) => {
-    e.target.src = placeholderImage; // Set fallback image
-  };
+  // const handleImageError = (e) => {
+  //   e.target.src = placeholderImage; // Set fallback image
+  // };
 
   return (
     <section id="projects" className="container py-5">
@@ -50,7 +50,7 @@ const Projects = () => {
             src={`data:image/jpeg;base64,${selectedProject.image}`} // Handle dynamic image from backend
             alt={selectedProject.title}
             className="project-img mb-3"
-            onError={handleImageError} // Fallback to placeholder image
+            //onError={handleImageError} // Fallback to placeholder image
           />
           <div className="text-center">
             <button
@@ -78,7 +78,7 @@ const Projects = () => {
                 src={`data:image/jpeg;base64,${project.image}`} // Handle dynamic image from backend
                 alt={project.title}
                 className="project-thumbnail"
-                onError={handleImageError} // Fallback to placeholder image
+               // onError={handleImageError} // Fallback to placeholder image
               />
               <h4>{project.title}</h4>
             </div>

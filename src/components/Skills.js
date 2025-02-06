@@ -3,9 +3,6 @@ import axios from "axios";
 import "./Skills.css";
 import Lottie from "lottie-react";
 import animationData from "../assets/animations/skills-animation.json";
-import { FaPython, FaHtml5, FaCss3Alt, FaDatabase } from "react-icons/fa";
-import { FaGithub } from 'react-icons/fa';
-
 
 const Skills = () => {
   const [skills, setSkills] = useState([]);
@@ -58,34 +55,6 @@ const Skills = () => {
               onClick={() => setSelectedSkill(skill)}
             >
               <h4>{skill.name}</h4>
-              {/* Display icons for each skill */}
-              <div className="skill-icon">
-                {skill.name === "Python" && (
-                  <FaPython style={{ color: "#3776AB", fontSize: "2rem" }} />
-                )}
-                {skill.name === "PostgreSQL" && (
-                  <FaDatabase style={{ color: "#336791", fontSize: "2rem" }} />
-                )}
-
-                {skill.name === "GIT" && (
-                 <FaGithub style={{ color: "#f1502f", fontSize: "2rem" }} />
-                )}
-                
-                {skill.name === "HTML & CSS" && (
-                  <div className="skill-icons">
-                    <FaHtml5 style={{ color: "#E34F26", fontSize: "2rem" }} />
-                    <FaCss3Alt
-                      style={{
-                        color: "#1572B6",
-                        fontSize: "2rem",
-                        marginLeft: "8px",
-                      }}
-                      
-                    />
-                    
-                  </div>
-                )}
-              </div>
             </div>
           ))}
         </div>

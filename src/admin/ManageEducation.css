@@ -1,0 +1,202 @@
+/* Education Container */
+.education-container {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+
+/* Add Button */
+.add-button {
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #E6E6FA;
+  color: black;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #9500b3;
+}
+
+/* Form Container */
+.form-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 70%;
+  margin: 20px auto;
+}
+
+/* Form Grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+/* Input Fields */
+input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* Table Container */
+.table-container {
+  overflow-x: auto;
+}
+
+/* Education Table */
+.education-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.education-table th,
+.education-table td {
+  border: 1px solid #E6E6FA;
+  padding: 10px;
+  text-align: center;
+}
+
+.education-table th {
+  background-color: #E6E6FA;
+  color: black;
+}
+
+.education-table tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Edit & Delete Buttons */
+.edit-btn,
+.delete-btn {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-btn {
+  background-color: #E6E6FA;
+  color: black;
+}
+
+.delete-btn {
+  background-color: #E6E6FA;
+  color: black;
+}
+
+/* 🔹 RESPONSIVE DESIGN */
+
+/* ✅ Medium Screens (Tablets - iPads, max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+  .form-container {
+    width: 80%;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .education-table th,
+  .education-table td {
+    padding: 8px;
+  }
+
+  .add-button {
+    font-size: 15px;
+    padding: 9px 14px;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    padding: 5px 8px;
+  }
+}
+
+/* ✅ Small Screens (Mobile - Phones, max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .form-container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .add-button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .education-table {
+    font-size: 14px;
+  }
+
+  .education-table th,
+  .education-table td {
+    padding: 6px;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    padding: 4px 6px;
+    font-size: 12px;
+  }
+}
+
+/* ✅ Extra Small Screens (Phones, max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .education-container {
+    width: 95%;
+  }
+
+  .form-container {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .add-button {
+    font-size: 13px;
+    padding: 7px 10px;
+  }
+
+  .education-table {
+    font-size: 12px;
+  }
+
+  .education-table th,
+  .education-table td {
+    padding: 5px;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    padding: 3px 5px;
+    font-size: 10px;
+  }
+}
